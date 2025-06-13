@@ -364,7 +364,7 @@ clog-builder window.")
 
 (defun on-open-panel-window (body)
   (on-new-builder body))
-
+;; 构建主窗口
 (defun on-new-builder (body)
   "Launch instance of the CLOG Builder"
   (set-html-on-close body "Connection Lost")
@@ -640,7 +640,7 @@ clog-builder window.")
                                          open-file))))
     (format t "~%If browser does not start go to http://127.0.0.1:~A~A" clog:*clog-port* open-url)
     (open-browser :url (format nil "http://127.0.0.1:~A~A" clog:*clog-port* open-url))))
-
+;;整个builder项目的启动部分
 (defun clog-builder (&key (host "0.0.0.0") (port 8080) (start-browser t)
                      app project dir static-root system clogframe
                      (new-template "ncp") no-quicklisp)

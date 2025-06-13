@@ -708,7 +708,7 @@ CLOG-OBJ"))
 and if :AUTO-PLACE (default t) place-inside-bottom-of CLOG-OBJ. A span is
 an inline element while a div is a block element (one that takes up the entire
 browser width)."))
-
+;;创建一个span标签
 (defmethod create-span ((obj clog-obj) &key (content "")
                                          (style nil)
                                          (hidden nil)

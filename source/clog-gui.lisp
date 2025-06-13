@@ -715,7 +715,7 @@ clog-body. If main-menu add as main menu bar."))
                                     class
                                     html-id)
   (:documentation "Attached a menu item to a CLOG-GUI-MENU-DROP-DOWN"))
-
+;;创建一个菜单
 (defmethod create-gui-menu-item ((obj clog-obj)
                                  &key (content "")
                                    (on-click nil)

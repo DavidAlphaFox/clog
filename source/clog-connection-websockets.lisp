@@ -436,7 +436,7 @@ the contents sent to the brower."
                                                  "compiled version"))
   (format t "Boot file for path / : ~A~%"    boot-file)
   *client-handler*)
-
+;;添加插件路径
 (defun add-plugin-path (regex static-path)
   "When a path to the webserver matches REGEX resolve the static file using
 STATIC-PATH"
@@ -471,7 +471,7 @@ STATIC-PATH"
 ;;;;;;;;;;;;;
 ;; execute ;;
 ;;;;;;;;;;;;;
-
+;; 请求前端执行特定的操作
 (defun execute (connection-id message)
   "Execute SCRIPT on CONNECTION-ID, disregard return value."
   (if *long-poll-first*

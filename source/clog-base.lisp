@@ -182,7 +182,7 @@ result or if time out DEFAULT-ANSWER. see JQUERY-QUERY (Internal)"))
 (defgeneric bind-event-script (clog-obj event call-back)
   (:documentation "Create the code client side for EVENT CALL-BACK.
 (Private)"))
-
+;;动态增加JQuery处理的代码
 (defmethod bind-event-script ((obj clog-obj) event call-back)
   (jquery-execute obj (format nil "on('~A',function (e, data){~A})"
                               event call-back)))
@@ -359,7 +359,7 @@ result or if time out DEFAULT-ANSWER. see JQUERY-QUERY (Internal)"))
                        cancel-event
                        one-time)
   (:documentation "Create the low-level hook for incoming events. (Private)"))
-
+;; 对clog-obj 对象设置event处理句柄
 (defmethod set-event ((obj clog-obj) event handler
                       &key (call-back-script "")
                       (pre-eval "")
@@ -874,7 +874,7 @@ event on right click."))
   (:documentation "Set the ON-CLICK-HANDLER for CLOG-OBJ. If ON-CLICK-HANDLER
 is nil unbind the event. Setting this event will replace an on-mouse click if
 set. If :ONE-TIME unbind event on click."))
-
+;;对clog-obj 增加click对象
 (defmethod set-on-click ((obj clog-obj) handler &key one-time cancel-event)
   (set-event obj "click"
              (when handler
